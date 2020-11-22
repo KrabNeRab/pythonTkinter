@@ -3,45 +3,48 @@ import tkinter.messagebox
 
 
 root = Tk()
-root.geometry('600x600')
+root.geometry('450x450')
 root.title('Крестики-нолики')
+root.resizable(width = False, height = False)
 
 
-btn1 = Button(root, text = '', width = 10, height = 5)
-btn1.bind('<Button-1>', lambda arg:click(btn1, 0))
+
+btn1 = Button(root, text = '', width = 20, height = 10)
+btn1.bind('<ButtonRelease-1>', lambda arg:click(btn1, 0))
 btn1.place(x = 0, y = 0)
 
-btn2 = Button(root, text = '', width = 10, height = 5)
-btn2.bind('<Button-1>', lambda arg:click(btn2, 1))
-btn2.place(x = 81, y = 0)
+btn2 = Button(root, text = '', width = 20, height = 10)
+btn2.bind('<ButtonRelease-1>', lambda arg:click(btn2, 1))
+btn2.place(x = 150, y = 0)
 
-btn3 = Button(root, text = '', width = 10, height = 5)
-btn3.bind('<Button-1>', lambda arg:click(btn3, 2))
-btn3.place(x = 162, y = 0)
+btn3 = Button(root, text = '', width = 20, height = 10)
+btn3.bind('<ButtonRelease-1>', lambda arg:click(btn3, 2))
+btn3.place(x = 300, y = 0)
+ 
+btn4 = Button(root, text = '', width = 20, height = 10)
+btn4.bind('<ButtonRelease-1>', lambda arg:click(btn4, 3))
+btn4.place(x = 0, y = 150)
+ 
+btn5 = Button(root, text = '', width = 20, height = 10)
+btn5.bind('<ButtonRelease-1>', lambda arg:click(btn5, 4))
+btn5.place(x = 150, y = 150)
+ 
+btn6 = Button(root, text = '', width = 20, height = 10)
+btn6.bind('<ButtonRelease-1>', lambda arg:click(btn6, 5))
+btn6.place(x = 300, y = 150)
+ 
+btn7 = Button(root, text = '', width = 20, height = 10)
+btn7.bind('<ButtonRelease-1>', lambda arg:click(btn7, 6))
+btn7.place(x = 0, y = 300)
+ 
+btn8 = Button(root, text = '', width = 20, height = 10)
+btn8.bind('<ButtonRelease-1>', lambda arg:click(btn8, 7))
+btn8.place(x = 150, y = 300)
+ 
+btn9 = Button(root, text = '', width = 20, height = 10)
+btn9.bind('<ButtonRelease-1>', lambda arg:click(btn9, 8))
+btn9.place(x = 300, y = 300)
 
-btn4 = Button(root, text = '', width = 10, height = 5)
-btn4.bind('<Button-1>', lambda arg:click(btn4, 3))
-btn4.place(x = 0, y = 81)
-
-btn5 = Button(root, text = '', width = 10, height = 5)
-btn5.bind('<Button-1>', lambda arg:click(btn5, 4))
-btn5.place(x = 81, y = 81)
-
-btn6 = Button(root, text = '', width = 10, height = 5)
-btn6.bind('<Button-1>', lambda arg:click(btn6, 5))
-btn6.place(x = 162, y = 81)
-
-btn7 = Button(root, text = '', width = 10, height = 5)
-btn7.bind('<Button-1>', lambda arg:click(btn7, 6))
-btn7.place(x = 0, y = 162)
-
-btn8 = Button(root, text = '', width = 10, height = 5)
-btn8.bind('<Button-1>', lambda arg:click(btn8, 7))
-btn8.place(x = 81, y = 162)
-
-btn9 = Button(root, text = '', width = 10, height = 5)
-btn9.bind('<Button-1>', lambda arg:click(btn9, 8))
-btn9.place(x = 162, y = 162)
 
 xo = 1 # x - 1, 0 - 2
 
@@ -118,14 +121,14 @@ def check_win():
         restart()
 
     elif field[1] == field[4] == field[7]:
-        if field[0] == 'X':
+        if field[1] == 'X':
             tkinter.messagebox.showinfo(message = 'Крестики выиграли')
         else:
             tkinter.messagebox.showinfo(message = 'Нолики выиграли')
         restart()
         
     elif field[2] == field[5] == field[8]:
-        if field[0] == 'X':
+        if field[2] == 'X':
             tkinter.messagebox.showinfo(message = 'Крестики выиграли')
         else:
             tkinter.messagebox.showinfo(message = 'Нолики выиграли')
